@@ -1,6 +1,3 @@
 {
-    "httpMethod": "POST",
-    "queryStringParameters": {
-        "name": "world"
-    }
+    "name": "world"
 }

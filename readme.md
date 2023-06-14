@@ -13,7 +13,7 @@ cargo install cargo-lambda
 cargo lambda watch
 
 # invoke the lambda, pass the payload via cli
-cargo lambda invoke --data-ascii '{ "httpMethod": "POST", "queryStringParameters": { "name": "world" } }'
+cargo lambda invoke --data-ascii '{ "name": "world" }'
 
 # or via a file
 cargo lambda invoke rust-aws-lambda --data-file examples/hello_payload.json
