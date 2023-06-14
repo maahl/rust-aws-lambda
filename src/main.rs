@@ -18,7 +18,6 @@ async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt()
         .with_max_level(tracing::Level::INFO)
         .init();
-    env_logger::init();
 
     lambda_runtime::run(service_fn(say_hello)).await
 }

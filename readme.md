@@ -8,6 +8,8 @@ Rust, using Terraform.
 ```sh
 # install the rust lambda helper
 cargo install cargo-lambda
+# set up terraform
+terraform -chdir=infra init
 
 # compile and hot reload your lambda
 cargo lambda watch
@@ -17,6 +19,10 @@ cargo lambda invoke --data-ascii '{ "name": "world" }'
 
 # or via a file
 cargo lambda invoke rust-aws-lambda --data-file examples/hello_payload.json
+
+# deploy the lambda
+cargo lambda build --release --arm64 --output-format zip
+terraform -chdir=infra apply
 ```
 
 
